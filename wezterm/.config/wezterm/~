@@ -1,0 +1,31 @@
+-- Pull in the wezterm API
+local wezterm = require 'wezterm'
+
+-- This will hold the configuration.
+local config = wezterm.config_builder()
+
+-- Set a custom font and font size
+config.font = wezterm.font('Fira Code', { weight = 'Regular' })
+config.font_size = 14.0
+
+-- Set a color scheme
+config.color_scheme = wezterm.color.get_builtin_schemes()["Catppuccin Mocha"]
+
+-- Set initial window dimensions
+config.initial_cols = 120
+config.initial_rows = 30
+
+-- Enable fancy tab bar
+config.use_fancy_tab_bar = true
+
+-- Define some key assignments
+config.keys = {
+  {
+    key = 'r',
+    mods = 'CMD|SHIFT',
+    action = wezterm.action.ReloadConfiguration,
+  },
+}
+
+-- Return the configuration to wezterm
+return config
