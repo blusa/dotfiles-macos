@@ -89,3 +89,4 @@ alias cat='bat'
 # -----------------------------
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
+export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
