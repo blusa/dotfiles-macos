@@ -83,7 +83,7 @@ setopt hist_find_no_dups
 # -----------------------------
 alias ls='eza --icons --group-directories-first -h'
 alias cat='bat'
-
+alias upup='brew upgrade --greedy && brew upgrade --cask --greedy'
 # -----------------------------
 # Terminal-specific Integration
 # -----------------------------
@@ -95,3 +95,8 @@ export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 # Tmuxinator setup
 # ---
 export EDITOR='nvim'
+export NVM_DIR="$HOME/.nvm"
+ [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+ [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+

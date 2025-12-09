@@ -160,9 +160,6 @@ run = "move-node-to-workspace 2"
 if.app-id = 'dev.kiro.desktop'
 run = "move-node-to-workspace 3"
 
-[[on-window-detected]]
-if.app-id = 'com.google.Chrome'
-run = "move-node-to-workspace 4"
 
 [[on-window-detected]]
 if.app-id = 'com.github.GitHubClient'
