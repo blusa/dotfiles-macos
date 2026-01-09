@@ -4,7 +4,7 @@ local theme = wezterm.plugin.require("https://github.com/neapsix/wezterm").main
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
-config.colors = theme.colors()
+-- config.colors = theme.colors()
 
 -- Set a custom font and font size
 config.font = wezterm.font("JetBrains Mono", { weight = "Regular" })
@@ -12,7 +12,7 @@ config.font_size = 15.0
 
 -- Set a color scheme
 config.window_decorations = "RESIZE"
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.85
 config.macos_window_background_blur = 20
 config.enable_tab_bar = false
 

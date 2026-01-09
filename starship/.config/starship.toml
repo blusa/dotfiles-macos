@@ -1,178 +1,122 @@
-"$schema" = 'https://starship.rs/config-schema.json'
+#Location: ~/.config/starship.toml
+#What_is_starship: https://starship.rs/
 
-# Don't print a new line at the start of the prompt
-#add_newline = false
+add_newline = true
+command_timeout = 2000
 
-# Make prompt a single line instead of two lines
-#[line_break]
-#disabled = true
-
-format = """
-$username\
-$directory\
-$git_branch\
-$git_status\
-$fill\
-$c\
-$elixir\
-$elm\
-$golang\
-$haskell\
-$java\
-$julia\
-$nodejs\
-$nim\
-$rust\
-$scala\
-$conda\
-$python\
-$time  \
+format = """$env_var$os$username$hostname$kubernetes$directory$git_branch$git_status$python
+$character
 """
 
-palette = "rose-pine"
+[character]
+success_symbol = "╰⎯"
+error_symbol = "╰⎯"
+# ╭╴ ╰─
 
-[palettes.rose-pine]
-overlay = '#26233a'
-love = '#eb6f92'
-gold = '#f6c177'
-rose = '#ebbcba'
-pine = '#31748f'
-foam = '#9ccfd8'
-iris = '#c4a7e7'
-
-[directory]
-format = "[](fg:overlay)[ $path ]($style)[](fg:overlay) "
-style = "bg:overlay fg:pine"
-truncation_length = 3
-truncation_symbol = "…/"
-
-[directory.substitutions]
-Documents = "󰈙"
-Downloads = " "
-Music = " "
-Pictures = " "
-
-[fill]
-style = "fg:overlay"
-symbol = " "
-
-[git_branch]
-format = "[](fg:overlay)[ $symbol $branch ]($style)[](fg:overlay) "
-style = "bg:overlay fg:foam"
-symbol = ""
-
-[git_status]
+[env_var]
+symbol = "╭╴"
+variable = 'SHELL'
+format = "$symbol"
 disabled = false
-style = "bg:overlay fg:love"
-format = '[](fg:overlay)([$all_status$ahead_behind]($style))[](fg:overlay) '
-up_to_date = '[ ✓ ](bg:overlay fg:iris)'
-untracked = '[?\($count\)](bg:overlay fg:gold)'
-stashed = '[\$](bg:overlay fg:iris)'
-modified = '[!\($count\)](bg:overlay fg:gold)'
-renamed = '[»\($count\)](bg:overlay fg:iris)'
-deleted = '[✘\($count\)](style)'
-staged = '[++\($count\)](bg:overlay fg:gold)'
-ahead = '[⇡\(${count}\)](bg:overlay fg:foam)'
-diverged = '⇕[\[](bg:overlay fg:iris)[⇡\(${ahead_count}\)](bg:overlay fg:foam)[⇣\(${behind_count}\)](bg:overlay fg:rose)[\]](bg:overlay fg:iris)'
-behind = '[⇣\(${count}\)](bg:overlay fg:rose)'
 
-[time]
+
+#warp-Drop ugly default prompt characters
+#success_symbol = ""
+#error_symbol = ""
+
+# ---
+
+[os]
+format = '[$symbol](bold white) '   
 disabled = false
-format = " [](fg:overlay)[ $time ]($style)[](fg:overlay)"
-style = "bg:overlay"
-time_format = "%I:%M%P"
-use_12hr = true
 
+[os.symbols]
+Windows = ' '
+Arch = '󰣇'
+Ubuntu = ''
+Macos = '󰀵'
+Unknown = '󰠥'
+
+# ---y
+
+# Shows the username
 [username]
+style_user = 'yellow bold'
+style_root = 'black bold'
+format = '[//](black bold) [$user](#2883ff) ' # 2883ff
 disabled = false
-format = "[](fg:overlay)[ $user ]($style)[](fg:overlay) "
 show_always = true
-style_root = "bg:overlay fg:iris"
-style_user = "bg:overlay fg:iris"
 
-# Languages
-
-[c]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
+# Shows the hostname
+[hostname]
+ssh_only = false
+format = '[//](black bold) [$hostname](bold blue) '
 disabled = false
-symbol = " "
 
-[elixir]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = " "
+# Shows current directory
+[directory]
+truncation_length = 0
+truncation_symbol = '…/'
+home_symbol = '~'
+# read_only_style = '197'
+read_only = '  '
+format = '[//](black bold) [$path]($style)[$read_only]($read_only_style) '
+style = '#7ed1fb' # yellow bold
 
-[elm]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = " "
 
-[golang]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = " "
+# Shows current git branch
+[git_branch]
+# symbol = ' '
+symbol = ' '
+format = '[//](black bold) [$symbol\[$branch\]]($style) '
+# truncation_length = 0
+# truncation_symbol = '…/'
+style = 'bold green'
 
-[haskell]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = " "
+# Shows current git status
+[git_status]
+disabled = true
+format = '[ $all_status $ahead_behind]($style) '
+style = 'bold green'
+conflicted = '🏳'
+up_to_date = ''
+untracked = ' '
+ahead = '⇡${count}'
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
+behind = '⇣${count}'
+stashed = ' '
+modified = ' '
+staged = '[++\($count\)](green)'
+renamed = '襁 '
+deleted = ' '
 
-[java]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
+# Shows kubernetes context and namespace
+[kubernetes]
+format = 'via [󱃾 $context\($namespace\)](bold purple) '
 disabled = false
-symbol = " "
 
-[julia]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = " "
+# ---
 
-[nodejs]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = "󰎙 "
+[vagrant]
+disabled = true
 
-[nim]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = "󰆥 "
+[docker_context]
+disabled = true
 
-[rust]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = " "
-
-[scala]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = " "
+[helm]
+disabled = true
 
 [python]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$version ]($style)[](fg:overlay)"
-disabled = false
-symbol = ' '
+symbol = '󰌠'
+python_binary = ['./venv/bin/python', 'python', 'python3', 'python2']
+format = '[//](black bold) [${symbol} ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
 
-[conda]
-style = "bg:overlay fg:pine"
-format = " [](fg:overlay)[ $symbol$environment ]($style)[](fg:overlay)"
-disabled = false
-symbol = '🅒 '
 
-[character]
-vi_mode = true
-symbol        = "[INSERT] "
-vimcmd_symbol = "[NORMAL] "
-style         = "bold"
+[nodejs]
+disabled = true
 
+[ruby]
+disabled = true
+
+[terraform]
+disabled = true
