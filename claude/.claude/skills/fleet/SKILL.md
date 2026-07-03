@@ -33,7 +33,7 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-07-03.
 
 | Name | Role | IP (Tailscale) | Notes |
 |---|---|---|---|
-| Zorak | Unraid server + personal NAS | `100.78.112.90` | Exit node; hosts the Blusa.Cloud and Hermes VMs. Unraid may require `root` — verify |
+| Zorak | Unraid server + personal NAS | `100.78.112.90` | Exit node; hosts the Blusa.Cloud and Hermes VMs. SSH port 22 refused as of 2026-07-03 (likely disabled in Unraid settings) — use the Unraid web UI, or enable SSH first; user likely `root` (Unraid) |
 | Blusa.Cloud | Dokploy PaaS (VM on Zorak) | `100.95.237.71` | Apps deployed at `*.blusa.cloud`; ssh alias `blusa.cloud`; also manageable via the Dokploy MCP when connected |
 | Hermes | VM on Zorak | `100.80.176.126` | Being set up, usage growing |
 | LOLA | Debian, deep-learning box | `100.89.137.81` | Console fallback: GLKVM web UI at `100.94.141.50` |
@@ -46,6 +46,8 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-07-03.
 | Mama | `10.147.18.239` / `mama.odinedge.xyz` | `blusa` | **PRODUCTION** |
 | devbox | `10.147.18.235` / `devbox.odinedge.xyz` | `dior` | Dev sensor |
 | Nuno | no IP yet | — | Not deployed; RGB-IR camera variant (baby monitor) |
+
+Sensor service logs: `ssh <alias> 'journalctl -u noctua-sensor -f'` (systemd unit `noctua-sensor`).
 
 ## Access
 
