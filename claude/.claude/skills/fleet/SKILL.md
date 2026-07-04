@@ -1,12 +1,12 @@
 ---
 name: fleet
-description: Use when a task involves any of Pablo's machines — Buster, Bugs, Zorak, Blusa.Cloud, Dokploy, Hermes, LOLA, Riki, Mama, devbox, Nuno — or remote access over SSH, Tailscale, or ZeroTier (checking logs, deploying, restarting services, copying files on a remote host, Noctua sensors, *.blusa.cloud apps).
+description: Use when a task involves any of Pablo's machines — Buster, Bugs, Silvester, Zorak, Blusa.Cloud, Dokploy, Hermes, LOLA, Riki, Mama, devbox, Nuno — or remote access over SSH, Tailscale, or ZeroTier (checking logs, deploying, restarting services, copying files on a remote host, Noctua sensors, *.blusa.cloud apps).
 allowed-tools: Bash(ssh:*), Bash(scp:*), Bash(tailscale:*)
 ---
 
 # Fleet
 
-Pablo's personal fleet: laptops, servers, and Noctua edge sensors, reachable over Tailscale (`100.x` IPs) and/or ZeroTier (`10.147.18.x`, domain `*.odinedge.xyz`).
+Pablo's personal fleet: laptops, servers, and Noctua edge sensors, reachable over Tailscale (`100.x` IPs) and/or ZeroTier (`10.147.18.x`, domain `*.odinedge.xyz`). Machine names follow cartoon characters (Looney Tunes & co.) — a new host named after one is probably Pablo's.
 
 ## Golden rule: verify before connecting
 
@@ -27,7 +27,7 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-07-03.
 |---|---|---|---|
 | Buster (`buster-bunny`) | MacBook Pro, macOS | TS `100.77.231.63` + ZT | General + mobile dev — Pablo's usual local machine |
 | Bugs | ThinkPad P14s, Win 11 | TS `100.105.30.76` + ZT | Spinlock modern apps. No SSH server yet (setup pending) |
-| HP EliteBook (hostname TBC) | Win 10 | TS (IP TBC) | Spinlock legacy apps. No SSH server yet |
+| Silvester | HP EliteBook, Win 10 | TS (IP TBC — not in current tailnet device list) | Spinlock legacy apps. No SSH server yet |
 
 ### Servers / workstations
 
