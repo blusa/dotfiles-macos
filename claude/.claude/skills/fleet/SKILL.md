@@ -45,7 +45,7 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-07-03.
 | Riki | `10.147.18.105` / `riki.odinedge.xyz` | `blusa` | **PRODUCTION** |
 | Mama | `10.147.18.239` / `mama.odinedge.xyz` | `blusa` | **PRODUCTION** |
 | devbox | `10.147.18.235` / `devbox.odinedge.xyz` | `dior` | Dev sensor |
-| Nuno | `10.147.18.101` (no ssh alias yet) | — (≈devbox, likely `dior`) | Armbian on Rockchip **RK3588** (≈devbox). RGB-IR camera variant (baby monitor). Not deployed yet. ZeroTier id `630407c070`, MAC `42:8c:c1:4d:c3:0c` |
+| Nuno | `10.147.18.101` / `nuno.odinedge.xyz` | `blusa` | Armbian on Rockchip **RK3588** (≈devbox). RGB-IR camera variant (baby monitor). Not deployed yet. ZeroTier id `630407c070`, MAC `42:8c:c1:4d:c3:0c` |
 
 Sensor service logs: `ssh <alias> 'journalctl -u noctua-sensor -f'` (systemd unit `noctua-sensor`).
 
