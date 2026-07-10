@@ -1,6 +1,6 @@
 ---
 name: fleet
-description: Use when a task involves any of Pablo's machines — Buster, Bugs, Silvester, Zorak, Blusa.Cloud, Dokploy, Hermes, LOLA, Riki, Mama, devbox, Nuno — or remote access over SSH, Tailscale, or ZeroTier (checking logs, deploying, restarting services, copying files on a remote host, Noctua sensors, *.blusa.cloud apps).
+description: Use when a task involves any of Pablo's machines — Buster, Bugs, Silvester, Zorak, Blusa.Cloud, Dokploy, Hermes, Taz, LOLA, Riki, Mama, devbox, Nuno — or remote access over SSH, Tailscale, or ZeroTier (checking logs, deploying, restarting services, copying files on a remote host, Noctua sensors, *.blusa.cloud apps).
 allowed-tools: Bash(ssh:*), Bash(scp:*), Bash(tailscale:*)
 ---
 
@@ -36,6 +36,7 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-07-03.
 | Zorak | Unraid server + personal NAS | `100.78.112.90` | Exit node; hosts the Blusa.Cloud and Hermes VMs. SSH port 22 refused as of 2026-07-03 (likely disabled in Unraid settings) — use the Unraid web UI, or enable SSH first; user likely `root` (Unraid) |
 | Blusa.Cloud | Dokploy PaaS (VM on Zorak) | `100.95.237.71` | Apps deployed at `*.blusa.cloud`; ssh alias `blusa.cloud`; also manageable via the Dokploy MCP when connected |
 | Hermes | VM on Zorak | `100.80.176.126` | Being set up, usage growing |
+| Taz | **Backend/mobile developer workstation** (VM on Zorak) | `100.74.44.101` | Debian 13, 6 vCPU/16GB/232GB, user `blusa` (key auth). Node + eas-cli + clones of noctua-{backend,sensor,mobile}. Purpose: develop/build/ship without the Mac (EAS builds are cloud — no macOS needed). Disposable: rebuild rather than nurse |
 | LOLA | Debian, deep-learning box | `100.89.137.81` | Console fallback: GLKVM web UI at `100.94.141.50` |
 
 ### Noctua sensors (ZeroTier)
