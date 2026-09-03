@@ -100,3 +100,9 @@ export NVM_DIR="$HOME/.nvm"
  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
+
+# opencode
+export PATH=/Users/blusa/.opencode/bin:$PATH
+
+. "$HOME/.cargo/env"
+[ -f ~/.expo-token.env ] && source ~/.expo-token.env  # EXPO_TOKEN fuera de dotfiles
