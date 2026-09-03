@@ -1,16 +1,16 @@
 # Paleta: tokyonight night (matchea wezterm, tmux, nvim y borders)
 format = """\
-[](bg:#1a1b26 fg:#9ece6a)\
+[](fg:#9ece6a)\
 [󰀵 ](bg:#9ece6a fg:#1a1b26)\
-[](fg:#9ece6a bg:#414868)\
+[](fg:#9ece6a bg:#414868)\
 $time\
-[](fg:#414868 bg:#7aa2f7)\
+[](fg:#414868 bg:#7aa2f7)\
 $directory\
-[](fg:#7aa2f7 bg:#e0af68)\
+[](fg:#7aa2f7 bg:#e0af68)\
 $git_branch\
 $git_status\
 $git_metrics\
-[](fg:#e0af68 bg:#1a1b26)\
+[](fg:#e0af68)\
 $cmd_duration\
 $character\
 """
@@ -21,7 +21,7 @@ style = "fg:#1a1b26 bg:#7aa2f7"
 
 [git_branch]
 format = '[ $symbol$branch(:$remote_branch) ]($style)'
-symbol = "  "
+symbol = " "
 style = "fg:#1a1b26 bg:#e0af68"
 
 [git_status]
@@ -35,7 +35,7 @@ deleted_style = "fg:#f7768e bg:#1a1b26"
 disabled = false
 
 [cmd_duration]
-format = "[  $duration ]($style)"
+format = "[  $duration ]($style)"
 style = "fg:#e0af68"
 
 [character]
@@ -45,5 +45,4 @@ error_symbol = '[ ✗](#f7768e) '
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bg:#414868"
-format = '[[ 󱑍 $time ](bg:#414868 fg:#7dcfff)]($style)'
+format = '[ 󱑍 $time ](bg:#414868 fg:#7dcfff)'
