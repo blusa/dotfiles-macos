@@ -15,6 +15,8 @@ config.window_decorations = "RESIZE"
 config.window_background_opacity = 0.85
 config.macos_window_background_blur = 20
 config.enable_tab_bar = false
+config.color_scheme = "tokyonight_night"
+config.color_scheme = "Tomorrow Night Bright (Gogh)"
 
 -- Set initial window dimensions
 config.initial_cols = 120

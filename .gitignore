@@ -1,0 +1,4 @@
+.DS_Store
+
+# Raycast auto-actualiza el código de sus extensiones; no versionarlo
+raycast/.config/raycast/extensions/

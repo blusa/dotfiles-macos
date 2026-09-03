@@ -1,122 +1,51 @@
-#Location: ~/.config/starship.toml
-#What_is_starship: https://starship.rs/
-
-add_newline = true
-command_timeout = 2000
-
-format = """$env_var$os$username$hostname$kubernetes$directory$git_branch$git_status$python
-$character
+format = """\
+[](bg:#030B16 fg:#7DF9AA)\
+[󰀵 ](bg:#7DF9AA fg:#090c0c)\
+[](fg:#7DF9AA bg:#1C3A5E)\
+$time\
+[](fg:#1C3A5E bg:#3B76F0)\
+$directory\
+[](fg:#3B76F0 bg:#FCF392)\
+$git_branch\
+$git_status\
+$git_metrics\
+[](fg:#FCF392 bg:#030B16)\
+$character\
 """
 
-[character]
-success_symbol = "╰⎯"
-error_symbol = "╰⎯"
-# ╭╴ ╰─
-
-[env_var]
-symbol = "╭╴"
-variable = 'SHELL'
-format = "$symbol"
-disabled = false
-
-
-#warp-Drop ugly default prompt characters
-#success_symbol = ""
-#error_symbol = ""
-
-# ---
-
-[os]
-format = '[$symbol](bold white) '   
-disabled = false
-
-[os.symbols]
-Windows = ' '
-Arch = '󰣇'
-Ubuntu = ''
-Macos = '󰀵'
-Unknown = '󰠥'
-
-# ---y
-
-# Shows the username
-[username]
-style_user = 'yellow bold'
-style_root = 'black bold'
-format = '[//](black bold) [$user](#2883ff) ' # 2883ff
-disabled = false
-show_always = true
-
-# Shows the hostname
-[hostname]
-ssh_only = false
-format = '[//](black bold) [$hostname](bold blue) '
-disabled = false
-
-# Shows current directory
 [directory]
-truncation_length = 0
-truncation_symbol = '…/'
-home_symbol = '~'
-# read_only_style = '197'
-read_only = '  '
-format = '[//](black bold) [$path]($style)[$read_only]($read_only_style) '
-style = '#7ed1fb' # yellow bold
+format = "[ $path ]($style)"
+style = "fg:#E4E4E4 bg:#3B76F0"
 
-
-# Shows current git branch
 [git_branch]
-# symbol = ' '
-symbol = ' '
-format = '[//](black bold) [$symbol\[$branch\]]($style) '
-# truncation_length = 0
-# truncation_symbol = '…/'
-style = 'bold green'
+format = '[ $symbol$branch(:$remote_branch) ]($style)'
+symbol = "  "
+style = "fg:#1C3A5E bg:#FCF392"
 
-# Shows current git status
 [git_status]
-disabled = true
-format = '[ $all_status $ahead_behind]($style) '
-style = 'bold green'
-conflicted = '🏳'
-up_to_date = ''
-untracked = ' '
-ahead = '⇡${count}'
-diverged = '⇕⇡${ahead_count}⇣${behind_count}'
-behind = '⇣${count}'
-stashed = ' '
-modified = ' '
-staged = '[++\($count\)](green)'
-renamed = '襁 '
-deleted = ' '
+format = '[$all_status]($style)'
+style = "fg:#1C3A5E bg:#FCF392"
 
-# Shows kubernetes context and namespace
-[kubernetes]
-format = 'via [󱃾 $context\($namespace\)](bold purple) '
+[git_metrics]
+format = "([+$added]($added_style))[]($added_style)"
+added_style = "fg:#1C3A5E bg:#FCF392"
+deleted_style = "fg:bright-red bg:235"
 disabled = false
 
-# ---
+[hg_branch]
+format = "[ $symbol$branch ]($style)"
+symbol = " "
 
-[vagrant]
-disabled = true
+[cmd_duration]
+format = "[  $duration ]($style)"
+style = "fg:bright-white bg:18"
 
-[docker_context]
-disabled = true
+[character]
+success_symbol = '[ ➜](bold green) '
+error_symbol = '[ ✗](#E84D44) '
 
-[helm]
-disabled = true
-
-[python]
-symbol = '󰌠'
-python_binary = ['./venv/bin/python', 'python', 'python3', 'python2']
-format = '[//](black bold) [${symbol} ${pyenv_prefix}(${version} )(\($virtualenv\) )]($style) '
-
-
-[nodejs]
-disabled = true
-
-[ruby]
-disabled = true
-
-[terraform]
-disabled = true
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[ 󱑍 $time ](bg:#1C3A5E fg:#8DFBD2)]($style)'
