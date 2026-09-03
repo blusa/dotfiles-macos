@@ -1,12 +1,14 @@
 -- lua/plugins/colorscheme.lua
 return {
-  "Mofiqul/dracula.nvim",
-  lazy = false,
-  priority = 1000,
-  config = function()
-    require("dracula").setup({
-      transparent_bg = true,
-    })
-    vim.cmd("colorscheme dracula") -- or just "dracula" for default
-  end,
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {
+      style = "night",
+      transparent = true,
+      styles = { sidebars = "transparent", floats = "transparent" },
+    },
+  },
+  { "LazyVim/LazyVim", opts = { colorscheme = "tokyonight-night" } },
 }
