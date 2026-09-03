@@ -45,8 +45,8 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-09-01.
 
 | Name | ZT IP / ssh alias | User | Status |
 |---|---|---|---|
-| Riki | `10.147.18.105` / `riki.odinedge.xyz` | `blusa` | **PRODUCTION** |
-| Mama | `10.147.18.239` / `mama.odinedge.xyz` | `blusa` | Ya NO producción (confirmado por Pablo 2026-08-30): se puede tocar/actualizar/restartear |
+| Riki | `10.147.18.105` / `riki.odinedge.xyz` | `blusa` | **Dado por perdido** (Pablo 2026-09-03: no encuentra el sensor físico; offline desde mayo) |
+| Mama | `10.147.18.239` / `mama.odinedge.xyz` | `blusa` | No producción: se puede tocar/actualizar/restartear |
 | devbox | `10.147.18.235` / `devbox.odinedge.xyz` | `dior` | Dev sensor |
 | Nuno | `10.147.18.101` / `nuno.odinedge.xyz` | `blusa` | Armbian on Rockchip **RK3588** (≈devbox). RGB-IR camera variant (baby monitor). Not deployed yet. ZeroTier id `630407c070`, MAC `42:8c:c1:4d:c3:0c` |
 
@@ -76,7 +76,7 @@ Set up 2026-09-01. Hub UI: `https://app.t3.codes` (or the desktop app) with each
 
 ## Cautions
 
-- **Riki es sensor de producción**: no rebootear, reiniciar/parar servicios ni editar configs sin confirmación explícita de Pablo. (Mama dejó de ser producción el 2026-08-30 — tocable.)
+- **Ningún sensor Noctua es de producción** (confirmado por Pablo 2026-09-03) — todos tocables. Para reiniciar `noctua-sensor` sin sudo: `kill -9 $MainPID` (un `kill` liso sale limpio y `Restart=on-failure` NO relanza; en devbox `dior` tiene sudo solo con password).
 - Nothing destructive on any machine without asking first.
 
 ## Maintenance
