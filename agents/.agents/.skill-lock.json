@@ -1,0 +1,255 @@
+{
+  "version": 3,
+  "skills": {
+    "find-skills": {
+      "source": "vercel-labs/skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/skills.git",
+      "skillPath": "skills/find-skills/SKILL.md",
+      "skillFolderHash": "c2f31172b6f256272305a5e6e7228b258446899f",
+      "installedAt": "2026-02-17T14:18:59.965Z",
+      "updatedAt": "2026-02-17T14:18:59.965Z"
+    },
+    "vercel-react-native-skills": {
+      "source": "vercel-labs/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/vercel-labs/agent-skills.git",
+      "skillPath": "skills/react-native-skills/SKILL.md",
+      "skillFolderHash": "8b4c6a51914e2111ab6f4f00cb81778652aa241d",
+      "installedAt": "2026-03-21T15:02:07.471Z",
+      "updatedAt": "2026-03-21T15:02:07.471Z"
+    },
+    "supabase-postgres-best-practices": {
+      "source": "supabase/agent-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/supabase/agent-skills.git",
+      "skillPath": "skills/supabase-postgres-best-practices/SKILL.md",
+      "skillFolderHash": "95fe6d29daaf88aa9bc3b505ca4defe19ceabf92",
+      "pluginName": "postgres-best-practices",
+      "installedAt": "2026-03-21T15:02:17.491Z",
+      "updatedAt": "2026-03-21T15:02:17.491Z"
+    },
+    "asc-app-create-ui": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-app-create-ui/SKILL.md",
+      "skillFolderHash": "3453f7dc6e652b3c56072c63719734a64609f08c",
+      "installedAt": "2026-07-06T19:42:42.035Z",
+      "updatedAt": "2026-07-06T19:42:42.035Z"
+    },
+    "asc-apple-ads": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-apple-ads/SKILL.md",
+      "skillFolderHash": "1b36ce3bc8e377cbbb6f687888e998cceede8394",
+      "installedAt": "2026-07-06T19:42:42.036Z",
+      "updatedAt": "2026-07-06T19:42:42.036Z"
+    },
+    "asc-aso-audit": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-aso-audit/SKILL.md",
+      "skillFolderHash": "cd716013f166a536af1a4b96eda258d7427ec593",
+      "installedAt": "2026-07-06T19:42:42.037Z",
+      "updatedAt": "2026-07-06T19:42:42.037Z"
+    },
+    "asc-build-lifecycle": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-build-lifecycle/SKILL.md",
+      "skillFolderHash": "ace286d720b4ad94978b39d1ee06d3cef436a268",
+      "installedAt": "2026-07-06T19:42:42.037Z",
+      "updatedAt": "2026-07-06T19:42:42.037Z"
+    },
+    "asc-cli-usage": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-cli-usage/SKILL.md",
+      "skillFolderHash": "91f27d7c066235efc2323b39dc64f63e9184f53f",
+      "installedAt": "2026-07-06T19:42:42.038Z",
+      "updatedAt": "2026-07-06T19:42:42.038Z"
+    },
+    "asc-crash-triage": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-crash-triage/SKILL.md",
+      "skillFolderHash": "ddd74903f7d5ca6a3ab2adca3a5fe5d16bf91a2c",
+      "installedAt": "2026-07-06T19:42:42.038Z",
+      "updatedAt": "2026-07-06T19:42:42.038Z"
+    },
+    "asc-id-resolver": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-id-resolver/SKILL.md",
+      "skillFolderHash": "8a013c49128ca92ae6bc24a2233f796e47e0ba67",
+      "installedAt": "2026-07-06T19:42:42.038Z",
+      "updatedAt": "2026-07-06T19:42:42.038Z"
+    },
+    "asc-localize-metadata": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-localize-metadata/SKILL.md",
+      "skillFolderHash": "0e4b61406cab8b4f4f3e56c0c061300e70d078e5",
+      "installedAt": "2026-07-06T19:42:42.038Z",
+      "updatedAt": "2026-07-06T19:42:42.038Z"
+    },
+    "asc-metadata-sync": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-metadata-sync/SKILL.md",
+      "skillFolderHash": "564688da54466ebe0eb1ab9c4bd6942998cc38d8",
+      "installedAt": "2026-07-06T19:42:42.039Z",
+      "updatedAt": "2026-07-06T19:42:42.039Z"
+    },
+    "asc-notarization": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-notarization/SKILL.md",
+      "skillFolderHash": "36d8850790528df621beafcd6e511a6d24d685c0",
+      "installedAt": "2026-07-06T19:42:42.039Z",
+      "updatedAt": "2026-07-06T19:42:42.039Z"
+    },
+    "asc-ppp-pricing": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-ppp-pricing/SKILL.md",
+      "skillFolderHash": "fd5840ed039e7ebc19b7ecd9dc46e213a96bc838",
+      "installedAt": "2026-07-06T19:42:42.039Z",
+      "updatedAt": "2026-07-06T19:42:42.039Z"
+    },
+    "asc-release-flow": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-release-flow/SKILL.md",
+      "skillFolderHash": "cacd64a770958e28ab6f819e4c564375583603c9",
+      "installedAt": "2026-07-06T19:42:42.039Z",
+      "updatedAt": "2026-07-06T19:42:42.039Z"
+    },
+    "asc-revenuecat-catalog-sync": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-revenuecat-catalog-sync/SKILL.md",
+      "skillFolderHash": "f31c9607b4568fff8eef9cca0d7797694a06c984",
+      "installedAt": "2026-07-06T19:42:42.039Z",
+      "updatedAt": "2026-07-06T19:42:42.039Z"
+    },
+    "asc-screenshot-resize": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-screenshot-resize/SKILL.md",
+      "skillFolderHash": "5ac1818b9083168aa7156d22f422bef8f4a8255f",
+      "installedAt": "2026-07-06T19:42:42.040Z",
+      "updatedAt": "2026-07-06T19:42:42.040Z"
+    },
+    "asc-shots-pipeline": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-shots-pipeline/SKILL.md",
+      "skillFolderHash": "abe751dc2dcbf63518be4337e482485498eb723d",
+      "installedAt": "2026-07-06T19:42:42.040Z",
+      "updatedAt": "2026-07-06T19:42:42.040Z"
+    },
+    "asc-signing-setup": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-signing-setup/SKILL.md",
+      "skillFolderHash": "cee2136e2f85f2a15e5c3a75792d59c181946d38",
+      "installedAt": "2026-07-06T19:42:42.040Z",
+      "updatedAt": "2026-07-06T19:42:42.040Z"
+    },
+    "asc-submission-health": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-submission-health/SKILL.md",
+      "skillFolderHash": "27b738ad2e56b5b3853cc2d02d1d4f2eefffe7eb",
+      "installedAt": "2026-07-06T19:42:42.040Z",
+      "updatedAt": "2026-07-06T19:42:42.040Z"
+    },
+    "asc-subscription-localization": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-subscription-localization/SKILL.md",
+      "skillFolderHash": "b7d47e584af0e780e5ca40c3418ec6dd0f6f8e71",
+      "installedAt": "2026-07-06T19:42:42.041Z",
+      "updatedAt": "2026-07-06T19:42:42.041Z"
+    },
+    "asc-testflight-orchestration": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-testflight-orchestration/SKILL.md",
+      "skillFolderHash": "335fe9c5a2826320f9663b4e9c9fbb0722f6d34e",
+      "installedAt": "2026-07-06T19:42:42.041Z",
+      "updatedAt": "2026-07-06T19:42:42.041Z"
+    },
+    "asc-wall-submit": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-wall-submit/SKILL.md",
+      "skillFolderHash": "80e3a2f914a7f07aa7641d523eadab226f869f41",
+      "installedAt": "2026-07-06T19:42:42.042Z",
+      "updatedAt": "2026-07-06T19:42:42.042Z"
+    },
+    "asc-whats-new-writer": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-whats-new-writer/SKILL.md",
+      "skillFolderHash": "95607774f0b4f620cc4a02a33bc4a3281845a76b",
+      "installedAt": "2026-07-06T19:42:42.042Z",
+      "updatedAt": "2026-07-06T19:42:42.042Z"
+    },
+    "asc-workflow": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-workflow/SKILL.md",
+      "skillFolderHash": "6f27477fab98a4196e7d5b8ed3821e32416739cc",
+      "installedAt": "2026-07-06T19:42:42.042Z",
+      "updatedAt": "2026-07-06T19:42:42.042Z"
+    },
+    "asc-xcode-build": {
+      "source": "rorkai/app-store-connect-cli-skills",
+      "sourceType": "github",
+      "sourceUrl": "https://github.com/rorkai/app-store-connect-cli-skills.git",
+      "skillPath": "skills/asc-xcode-build/SKILL.md",
+      "skillFolderHash": "b1bbe3203f627a44d3f0f928decaf7ee9cbd670a",
+      "installedAt": "2026-07-06T19:42:42.042Z",
+      "updatedAt": "2026-07-06T19:42:42.042Z"
+    }
+  },
+  "dismissed": {
+    "findSkillsPrompt": true
+  },
+  "lastSelectedAgents": [
+    "amp",
+    "cline",
+    "codex",
+    "cursor",
+    "gemini-cli",
+    "github-copilot",
+    "kimi-cli",
+    "opencode",
+    "warp",
+    "claude-code"
+  ]
+}
