@@ -1,4 +1,5 @@
 tap "atlassian/acli"
+tap "dimentium/autoraise"
 tap "FelixKratz/formulae"
 tap "nikitabobko/tap"
 tap "sst/tap"
@@ -24,6 +25,7 @@ brew "uv"
 brew "yazi"
 brew "zoxide"
 brew "atlassian/acli/acli"
+brew "dimentium/autoraise/autoraise", args: ["with-dexperimental_focus_first"]
 brew "FelixKratz/formulae/borders"
 brew "sst/tap/opencode"
 cask "aerospace"

@@ -1,0 +1,9 @@
+#AutoRaise config
+# Foco sigue al mouse SIN levantar ventanas (delay=0 desactiva el raise,
+# focusDelay requiere build con EXPERIMENTAL_FOCUS_FIRST)
+pollMillis=50
+delay=0
+focusDelay=1
+warpX=0.0
+warpY=0.0
+requireMouseStop=false
