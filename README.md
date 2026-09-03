@@ -9,8 +9,17 @@ Cada directorio es un "paquete" que replica la estructura desde `$HOME`.
 git clone https://github.com/blusa/dotfiles-macos.git ~/dotfiles-macos
 cd ~/dotfiles-macos
 brew bundle              # instala todo el Brewfile (taps de terceros requieren brew trust)
+
+# Evitar que stow "pliegue" dirs enteros al repo (linkearía ~/.claude completo,
+# y el estado local de Claude Code terminaría escribiéndose dentro del repo):
+mkdir -p ~/.claude/skills ~/.claude/hooks ~/.config ~/.agents
+
 stow */                  # symlinkea todos los paquetes
 ```
+
+Para traer solo Claude Code (CLAUDE.md global + skills propias como `fleet`) a
+una máquina, alcanza con el `mkdir` de arriba y `stow claude` (+ `stow agents`
+y `npx skills install` si querés las skills de terceros).
 
 ## Paquetes
 
