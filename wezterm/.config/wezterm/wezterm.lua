@@ -14,6 +14,8 @@ config.window_background_opacity = 0.85
 config.macos_window_background_blur = 20
 config.enable_tab_bar = false
 config.color_scheme = "tokyonight_night"
+-- OLED: fondo negro puro sobre la paleta tokyonight
+config.colors = { background = "#000000" }
 
 -- Set initial window dimensions
 config.initial_cols = 120
