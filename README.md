@@ -14,7 +14,7 @@ brew bundle              # instala todo el Brewfile (taps de terceros requieren 
 # y el estado local de Claude Code terminaría escribiéndose dentro del repo):
 mkdir -p ~/.claude/skills ~/.claude/hooks ~/.config ~/.agents
 
-stow $(command ls -d */ | grep -vx 't3/')   # symlinkea todos los paquetes (menos t3, ver abajo)
+stow $(command ls -d */ | grep -vxE '(t3|rdp)/')   # symlinkea todos los paquetes (menos t3 y rdp, ver abajo)
 
 # T3 Code rechaza symlinks en su dir de themes (O_NOFOLLOW), va por copia:
 cp t3/.t3/userdata/themes/*.json ~/.t3/userdata/themes/
@@ -36,6 +36,7 @@ y `npx skills install` si querés las skills de terceros).
 | `claude` | Claude Code: `CLAUDE.md` global, `settings.json` (hooks herdr, statusline), `hooks/`, y skills propias (`fleet`, `noctua-app-release`) |
 | `agents` | `.skill-lock.json` de las skills de terceros (ver abajo) |
 | `t3` | Theme "Tokyo Night OLED" para T3 Code — **se copia, no se stowea** |
+| `rdp` | Archivos `.rdp` (no se stowea): `bugs.rdp` conecta a Bugs con login web de Entra ID — abrir con Windows App (macOS) o `xfreerdp3 /sec:aad` (Linux); Remmina no soporta web sign-in (requiere NLA off en la PC) |
 | `ssh` | `~/.ssh/config` (solo hosts, sin claves) |
 
 ## Skills de Claude Code
