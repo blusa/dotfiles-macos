@@ -9,9 +9,24 @@ bindkey '^[w' kill-region
 # Increase nesting limit so Starship + vi-mode can both wrap zle widgets
 typeset -g FUNCNEST=5000
 
-# FZF, zoxide, and Starship inits
-eval "$(fzf --zsh)"
-eval "$(zoxide init --cmd cd zsh)"
+# Debian llama distinto a bat y fd
+command -v batcat >/dev/null && alias bat='batcat'
+if command -v fd >/dev/null; then _FD=fd
+elif command -v fdfind >/dev/null; then _FD=fdfind; alias fd='fdfind'
+fi
+
+# FZF, zoxide, direnv inits (guardeados: no rompen si falta la herramienta)
+command -v fzf >/dev/null && eval "$(fzf --zsh)"
+command -v zoxide >/dev/null && eval "$(zoxide init --cmd cd zsh)"
+command -v direnv >/dev/null && eval "$(direnv hook zsh)"
+
+# fzf: fd respeta .gitignore; preview con bat en Ctrl+T
+if [ -n "$_FD" ]; then
+    export FZF_DEFAULT_COMMAND="$_FD --type f --hidden --follow --exclude .git"
+    export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+    export FZF_ALT_C_COMMAND="$_FD --type d --hidden --follow --exclude .git"
+fi
+export FZF_CTRL_T_OPTS="--preview 'bat --color=always --style=numbers {} 2>/dev/null || ls {}'"
 
 # -----------------------------
 # Zinit Setup
@@ -27,7 +42,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Path updates
 # -----------------------------
-export PATH="$PATH:/Users/blusa/.lmstudio/bin"
+[ -d "$HOME/.lmstudio/bin" ] && export PATH="$PATH:$HOME/.lmstudio/bin"
 
 # -----------------------------
 # Zinit Plugins
@@ -58,8 +73,8 @@ zinit cdreplay -q
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza --color=always --icons $realpath 2>/dev/null || ls $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza --color=always --icons $realpath 2>/dev/null || ls $realpath'
 
 eval "$(starship init zsh)"
 
@@ -82,27 +97,41 @@ setopt hist_find_no_dups
 # Aliases
 # -----------------------------
 alias ls='eza --icons --group-directories-first -h'
+alias ll='eza --icons --group-directories-first -lh'
+alias lt='eza --icons --tree --level=2'
 alias cat='bat'
-alias upup='brew upgrade --greedy && brew upgrade --cask --greedy'
+alias lg='lazygit'
+alias ld='lazydocker'
+command -v brew >/dev/null && alias upup='brew upgrade --greedy && brew upgrade --cask --greedy'
+
+# yazi: al salir te deja en el último directorio navegado
+y() {
+    local tmp cwd
+    tmp="$(mktemp -t yazi-cwd.XXXXXX)"
+    yazi "$@" --cwd-file="$tmp"
+    if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+        builtin cd -- "$cwd"
+    fi
+    rm -f -- "$tmp"
+}
 # -----------------------------
 # Terminal-specific Integration
 # -----------------------------
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
-export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+[ -d /opt/homebrew/opt/openjdk@21/bin ] && export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 # ---
 # Tmuxinator setup
 # ---
 export EDITOR='nvim'
 export NVM_DIR="$HOME/.nvm"
- [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
- [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-
-
+# nvm: brew en macOS, install script en Linux
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 # opencode
-export PATH=/Users/blusa/.opencode/bin:$PATH
+[ -d "$HOME/.opencode/bin" ] && export PATH="$HOME/.opencode/bin:$PATH"
 
-. "$HOME/.cargo/env"
+[ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f ~/.expo-token.env ] && source ~/.expo-token.env  # EXPO_TOKEN fuera de dotfiles

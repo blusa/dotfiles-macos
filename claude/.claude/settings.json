@@ -6,7 +6,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/blusa/.claude/hooks/herdr-agent-state.sh' blocked",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" blocked",
             "timeout": 10
           }
         ]
@@ -18,7 +18,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/blusa/.claude/hooks/herdr-agent-state.sh' working",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" working",
             "timeout": 10
           }
         ]
@@ -30,7 +30,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/blusa/.claude/hooks/herdr-agent-state.sh' release",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" release",
             "timeout": 10
           }
         ]
@@ -42,7 +42,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/blusa/.claude/hooks/herdr-agent-state.sh' idle",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" idle",
             "timeout": 10
           }
         ]
@@ -54,7 +54,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/blusa/.claude/hooks/herdr-agent-state.sh' working",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" working",
             "timeout": 10
           }
         ]
@@ -66,7 +66,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "bash '/Users/blusa/.claude/hooks/herdr-agent-state.sh' working",
+            "command": "bash \"$HOME/.claude/hooks/herdr-agent-state.sh\" working",
             "timeout": 10
           }
         ]
@@ -75,7 +75,7 @@
   },
   "statusLine": {
     "type": "command",
-    "command": "/Users/blusa/.claude/abtop-statusline.sh"
+    "command": "$HOME/.claude/abtop-statusline.sh"
   },
   "enabledPlugins": {
     "code-review@claude-plugins-official": true,

@@ -52,7 +52,14 @@ y `npx skills install` si querés las skills de terceros).
 AutoRaise necesita permiso de Accesibilidad (System Settings → Privacy & Security)
 apuntando a `/opt/homebrew/opt/autoraise/bin/AutoRaise`.
 
-## Pendiente
+## Linux / WSL / Omarchy
 
-- Migración a Linux: `aerospace`/`borders`/`autoraise`/`raycast` no aplican;
-  el resto es portable (ojo: `claude/settings.json` tiene paths absolutos `/Users/blusa/...`).
+Todo el stack de shell es portable: `zsh`, `starship`, `tmux`, `git`, `nvim`,
+`claude`, `agents` y `rdp` funcionan igual (el `.zshrc` tiene guards para
+herramientas ausentes y maneja los nombres de Debian `batcat`/`fdfind`; los
+paths usan `$HOME`). Instalar equivalentes: en Debian/WSL
+`apt install zsh stow fzf zoxide eza bat fd-find ripgrep direnv starship tmux`,
+en Omarchy casi todo ya viene (Arch: `pacman -S` lo que falte).
+
+No aplican fuera de macOS: `aerospace`, `borders`, `autoraise`, `raycast`,
+`wezterm` (config portable si usás wezterm ahí), y el Brewfile.
