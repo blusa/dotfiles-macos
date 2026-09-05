@@ -42,6 +42,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Path updates
 # -----------------------------
+[ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
 [ -d "$HOME/.lmstudio/bin" ] && export PATH="$PATH:$HOME/.lmstudio/bin"
 
 # -----------------------------
@@ -135,3 +136,6 @@ export NVM_DIR="$HOME/.nvm"
 
 [ -f "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
 [ -f ~/.expo-token.env ] && source ~/.expo-token.env  # EXPO_TOKEN fuera de dotfiles
+
+# Overrides específicos de esta máquina (no versionado)
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
