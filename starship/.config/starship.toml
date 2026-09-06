@@ -15,6 +15,16 @@ $cmd_duration\
 $character\
 """
 
+# Hostname a la derecha: siempre visible (no solo SSH) para saber en qué
+# máquina está la sesión — importa con T3 Code, donde la shell es local
+# en la máquina remota y no hay $SSH_CONNECTION.
+right_format = "$hostname"
+
+[hostname]
+ssh_only = false
+trim_at = "."
+format = "[](fg:#bb9af7)[ 󰒋 $hostname ](bg:#bb9af7 fg:#000000)"
+
 [os]
 disabled = false
 format = "[ $symbol ]($style)"
