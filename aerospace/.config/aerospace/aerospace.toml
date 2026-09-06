@@ -165,14 +165,5 @@ if.app-id = 'com.jetbrains.pycharm'
 run = "move-node-to-workspace 2"
 
 [[on-window-detected]]
-if.app-id = 'dev.kiro.desktop'
-run = "move-node-to-workspace 3"
-
-
-[[on-window-detected]]
 if.app-id = 'com.github.GitHubClient'
 run = "move-node-to-workspace 5"
-
-[[on-window-detected]]
-if.app-id = 'ai.elementlabs.lmstudio'
-run = "move-node-to-workspace 9"

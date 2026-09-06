@@ -43,7 +43,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Path updates
 # -----------------------------
 [ -d "$HOME/.local/bin" ] && export PATH="$HOME/.local/bin:$PATH"
-[ -d "$HOME/.lmstudio/bin" ] && export PATH="$PATH:$HOME/.lmstudio/bin"
 
 # -----------------------------
 # Zinit Plugins
@@ -115,11 +114,6 @@ y() {
     fi
     rm -f -- "$tmp"
 }
-# -----------------------------
-# Terminal-specific Integration
-# -----------------------------
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
-
 [ -d /opt/homebrew/opt/openjdk@21/bin ] && export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
 
 # ---
