@@ -1,7 +1,7 @@
 # Paleta: tokyonight night (matchea wezterm, tmux, nvim y borders)
 format = """\
 [](fg:#9ece6a)\
-[󰀵 ](bg:#9ece6a fg:#000000)\
+$os\
 [](fg:#9ece6a bg:#16161e)\
 $time\
 [](fg:#16161e bg:#7aa2f7)\
@@ -14,6 +14,22 @@ $git_metrics\
 $cmd_duration\
 $character\
 """
+
+[os]
+disabled = false
+format = "[ $symbol ]($style)"
+style = "bg:#9ece6a fg:#000000"
+
+[os.symbols]
+Macos = "󰀵"
+Debian = "󰣚"
+Arch = "󰣇"
+Ubuntu = "󰕈"
+Linux = "󰌽"
+Windows = "󰍲"
+Raspbian = "󰐼"
+Alpine = "󰼜"
+Fedora = "󰣛"
 
 [directory]
 format = "[ $path ]($style)"
