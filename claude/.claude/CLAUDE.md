@@ -7,7 +7,7 @@
 | Zorak | 100.78.112.90 (TS) | blusa (or root — Unraid) | Unraid server / NAS |
 | Blusa.Cloud | 100.95.237.71 (TS), alias `blusa.cloud` | blusa | Dokploy PaaS, VM on Zorak |
 | Hermes | 100.80.176.126 (TS) | blusa | VM on Zorak, being set up |
-| Taz | 100.74.44.101 (TS) | blusa | Backend/mobile dev workstation, VM on Zorak (Debian 13, disposable). T3 Code server. POR DECOMISIONAR — nada debe vivir solo ahí |
+| Taz | 100.74.44.101 (TS) | blusa | Backend/mobile dev workstation, VM on Zorak (Debian 13, disposable). T3 Code server. Ex-fleet-control (rol pasó a Buster). Se deja viva como respaldo por ahora — no decomisionar sin preguntar. Actualmente offline |
 | LOLA | 100.89.137.81 (TS) | blusa | Deep-learning server (Debian 13). T3 Code server |
 | Tweety | 100.112.179.45 (TS) | no SSH | Windows PC — offline, evitar usar (se retira a favor de Bugs) |
 | Marvin | 100.77.55.34 (TS) | no SSH | Windows PC, purpose TBC |
