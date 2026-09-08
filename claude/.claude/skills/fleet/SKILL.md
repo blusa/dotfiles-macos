@@ -61,6 +61,7 @@ Set up 2026-09-01. Hub UI: `https://app.t3.codes` (or the desktop app) with each
 | Taz | `https://taz.tail32621d.ts.net/` | systemd user unit `t3code.service` + linger, Tailscale Serve 443→127.0.0.1:3773 |
 | LOLA | `https://lola.tail32621d.ts.net/` | same as Taz |
 | Tweety | `https://tweety.tail32621d.ts.net/` | offline / avoid (2026-09-08) — replacement: Bugs (pending setup) |
+| Buster | no fixed URL — desktop app | Runs as the **`T3 Code (Alpha).app` GUI** (Electron), not a headless service: `npx t3 service status` → not installed, no systemd/launchd unit, no Tailscale Serve. Embedded server on `127.0.0.1:3773`. Confirmed working 2026-09-08: this is fine as-is — a session opened from Bugs against Buster connects and works, so the GUI mode is remotely usable for pairing despite no Serve/HTTPS front. |
 
 - Add a device: on the server `npx t3 pair --tailscale` → pairing URL/QR (token lasts minutes–hours; pairing is per browser/app, sessions persist after).
 - Maintain (Linux): `npx t3@latest service status|update|uninstall`; logs `~/.t3/userdata/logs/boot-service.log`; `npx t3 auth` to list/revoke sessions.
