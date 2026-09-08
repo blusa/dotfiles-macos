@@ -35,9 +35,9 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-09-08.
 
 | Name | Role | IP (Tailscale) | Notes |
 |---|---|---|---|
-| Zorak | Unraid server + personal NAS | `100.78.112.90` | Exit node; hosts the Blusa.Cloud and Hermes VMs. SSH port 22 refused as of 2026-07-03 (likely disabled in Unraid settings) — use the Unraid web UI, or enable SSH first; user likely `root` (Unraid) |
+| Zorak | Unraid server + personal NAS | `100.78.112.90` | Exit node; hosts the Blusa.Cloud and Hermes VMs. SSH re-enabled (confirmed working from Buster 2026-09-08, key auth OK); user `root` (Unraid) |
 | Blusa.Cloud | Dokploy PaaS (VM on Zorak) | `100.95.237.71` | Apps deployed at `*.blusa.cloud`; ssh alias `blusa.cloud`; also manageable via the Dokploy MCP when connected |
-| Hermes | VM on Zorak | `100.80.176.126` | Being set up, usage growing |
+| Hermes | VM on Zorak | `100.80.176.126` | Being set up, usage growing. SSH key auth OK from Buster (2026-09-08); user `blusa` |
 | Taz | **POR DECOMISIONAR** (2026-09-05) — backend/mobile workstation & hoy todavía fleet-control point (las sesiones de Claude que manejan la flota corren acá; el rol pasa a Buster, 2026-09-08) (VM on Zorak) | `100.74.44.101` | Debian 13, 6 vCPU/16GB/232GB, user `blusa` (key auth). Node + eas-cli + clones of noctua-{backend,sensor,mobile}. Purpose: develop/build/ship without the Mac (EAS builds are cloud — no macOS needed). Disposable: rebuild rather than nurse. **T3 Code server** (see below) |
 | LOLA | Debian 13, deep-learning box | `100.89.137.81` | Console fallback: GLKVM web UI at `100.94.141.50`. Node 22 via nvm (system node is 20), Claude Code installed. **T3 Code server** (see below). **Dotfiles deployados 2026-09-05**: repo clonado en `~/dotfiles-macos` + stow (zsh git nvim tmux tmuxinator starship claude agents ssh); stack completo en `~/.local/bin` sin sudo (starship zoxide fzf eza bat fd rg direnv lazygit yazi stow); configs viejas backupeadas como `*.pre-dotfiles`; fastfetch de bienvenida preservado en `~/.zshrc.local` |
 
@@ -76,15 +76,14 @@ la flota: `zorak blusa.cloud hermes taz lola buster riki mama devbox nuno`.
 Ojo: el bloque `Host *` va **al final** — en ssh config el primer valor gana, y si
 está arriba pisa el `User dior` de devbox.
 
-Estado verificado desde Buster el 2026-09-05 (`ssh <alias>`):
+Estado verificado desde Buster el 2026-09-08 (`ssh <alias>`):
 
 | Destino | Estado |
 |---|---|
-| blusa.cloud, taz, lola, mama, devbox, nuno | ✅ key auth OK |
-| hermes | ❌ Permission denied — **ninguna** máquina tiene key auth (ni Taz); requiere consola/password para instalar la .pub |
-| zorak | ❌ Permission denied — SSH deshabilitado en Unraid; usar web UI |
+| blusa.cloud, taz, lola, mama, devbox, nuno, hermes, zorak | ✅ key auth OK |
 
-- Buster ya iguala todos los accesos que tenía Taz (se le empujó la .pub a LOLA
+- Zorak (`root@`) y Hermes (`blusa@`) se instalaron con `ssh-copy-id` el 2026-09-08 — ambos puertos 22 estaban abiertos (el "SSH deshabilitado" de Zorak era estado viejo, ya no aplica), solo faltaba la key.
+- Buster ya iguala/supera todos los accesos que tenía Taz (se le empujó la .pub a LOLA
   vía hop por Taz el 2026-09-05), así que decomisionar Taz no pierde acceso.
 - LOLA unreachable over SSH? Console via GLKVM web UI: `http://100.94.141.50`.
 - Keys live in `~/.ssh` — never in this skill. No secrets here: names, IPs, users only.
