@@ -95,6 +95,9 @@ Estado verificado desde Buster el 2026-09-05 (`ssh <alias>`):
 
 ## Maintenance
 
-Source of truth: `~/dotfiles-macos/claude/.claude/skills/fleet/SKILL.md` (stow package `claude`) — edit there and commit; `~/.claude/skills/fleet` is a symlink into it.
+**Repo-first policy (Pablo, 2026-09-08): everything lives in the dotfiles repo (`blusa/dotfiles-macos`), nothing may live only on one machine.** Taz is being decommissioned — treat any Taz-local file as disposable; sync anything valuable to the repo immediately.
 
-If `tailscale status` shows machines not listed here, or an entry is stale (IP/user/purpose changed, machine retired), propose updating this table and the Fleet section of `~/.claude/CLAUDE.md`.
+- Source of truth: `~/dotfiles-macos/claude/.claude/skills/fleet/SKILL.md` (stow package `claude`). On Buster and LOLA, `~/.claude/skills/fleet` is a symlink into the repo checkout; edit + commit + push there.
+- **On Buster: `git -C ~/dotfiles-macos pull` regularly — always before fleet work and before editing this skill** (other machines push updates; a stale checkout caused a 3-day divergence on 2026-09-08).
+- On LOLA (and any machine with a checkout): pull after someone pushes.
+- If `tailscale status` shows machines not listed here, or an entry is stale, propose updating this table and the Fleet section of `~/.claude/CLAUDE.md` — then commit and push the change, never leave it machine-local.
