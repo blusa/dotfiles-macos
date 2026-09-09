@@ -52,6 +52,9 @@ Default SSH user: `blusa` (exceptions noted). Last validated: 2026-09-08.
 
 Sensor service logs: `ssh <alias> 'journalctl -u noctua-sensor -f'` (systemd unit `noctua-sensor`).
 
+- El checkout del sensor vive en `~/Developer/noctua-sensor` (usuario `blusa` en mama, `dior` en devbox); el servicio corre `uv run python src/main.py` desde ahí. Actualizar = `git pull --ff-only && uv sync` + `kill -9 $(systemctl show -p MainPID --value noctua-sensor)`.
+- **Desde sesiones de Claude en Buster (T3 Code), `ssh mama`/`devbox` puede fallar con "No route to host" aunque ZeroTier esté sano** (visto 2026-09-09: ARP resuelve, mama hace ping a Buster, pero el tráfico originado por la app no sale — coincide con el permiso *Red local* de macOS para la app que hospeda la sesión). Fallback que anda: `ssh -o ProxyJump=zorak mama` (Zorak está en ZeroTier, `10.147.18.244`, y llega por Tailscale); para rsync/scp usar `-e "ssh -o ProxyJump=zorak"`. Pendiente: habilitar Red local para T3 Code en Ajustes → Privacidad y seguridad.
+
 ## T3 Code (coding-agent control plane, t3.codes)
 
 Set up 2026-09-01. Hub UI: `https://app.t3.codes` (or the desktop app) with each machine added as an environment; the browser talks to each server directly over Tailscale (HTTPS required — mixed-content blocks plain `http://100.x:3773`).
